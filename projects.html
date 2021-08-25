@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <div class="bar">
+            <div class="navbar">
+                <a href="./index.html">Index</a>
+                <a href="./projects.html">Projects</a>
+                <a href="./res/resume.pdf">Resume</a>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="sidenav">
+        <h2 style="margin-top: 0px">Outline</h2>
+        <a href="#gamedesign">Game Design</a>
+        <ul>
+            <li><a>Springs With Guns</a></li>
+            <li><a>A Small Game About Juiceboxes</a></li>
+            <li><a>Parole in One</a></li>
+        </ul>
+        <a href="#music">Music</a>
+        <ul>
+            <li><a>A Small Game About Juiceboxes</a></li>
+            <li><a>Parole in One</a></li>
+        </ul>
+    </div>
+    <div class="content" style="margin-left: 15%">
+        <div class="project-list">
+            <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
+
+            <div class="project-li">
+                <img src="res/game-bg.png" style="margin-top: -10px">
+                <h3>Springs with Guns <a style="font-size: x-small">(Working Title)</a></h3><a style="float: right"> |
+                    Status: In Development ▶️</a>
+                <p class="smalltext">Tools: Godot Engine. </p>
+                <p>Currently in the prototyping phase. An attempt to create a reusable fighting game template, then
+                    produce a casual fighting game out of it with an emphasis on simple controls and a
+                    reliance on the interaction
+                    between spring
+                    physics and gun recoil for movement.</p>
+                <a>Current progress is updated <a href="https://twitter.com/_leckert">on my twitter feed</a> quite
+                    sporadically.</a>
+            </div>
+            <br>
+            <div class="project-li">
+                <img src="res/jb-game.png" style="margin-top: -10px">
+                <h3>A Small Game About Juiceboxes</h3><a> | September 2020</a><a style="float: right"> | Status:
+                    Completed
+                    ✔️</a>
+                <p class="smalltext">Tools: Godot Engine, Paint.NET, LMMS. </p>
+                <p>My first solo game project made using Godot Engine. Developed over three months in quarantine, the
+                    focus of this project was to experiment with game "juice" (hence the name) and familiarize myself
+                    with the process of developing a game from start to finish.</p>
+                <a>More information / downloads at this </a><a href="https://lucien-eckert.itch.io/juicebox">itch.io
+                    page</a>
+            </div>
+            <br>
+            <div class="project-li">
+                <img src="res/pio-game.png" style="margin-top: -10px">
+                <h3>Parole in One</h3><a> | May 2020</a><a style="float: right"> | Status:
+                    Completed
+                    ✔️</a>
+                <p class="smalltext">Tools: LibGDX, GIMP, LMMS. </p>
+                <p>Produced during <a href="https://www.cs.cornell.edu/courses/cs3152/2020sp/">INFO 3152: Introduction
+                        to Game Development</a>. Worked as a designer on a team
+                    of 8 people, primarily focusing on sound design and level design, as well as creating a few
+                    animations and
+                    facilitating playtesting sessions.</p>
+                <a>More information / downloads at this </a><a href="https://irselin.itch.io/parole-in-one">itch.io
+                    page</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="content" style="margin-left: 15%">
+        <h2 class='blocky' id="music">MUSIC --</h2>
+        <div class="project-li">
+            <img src="res/jb-game-mus.png" style="padding: 0; margin: 10px; border: 5px solid black">
+            <div class="music-list">
+                <h3>A Small Game About Juiceboxes OST</h3>
+                <ul>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_01'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Early Levels </a><audio id="jb_01" src="res/music/jb_01.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_02'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Midgame Levels</a><audio id="jb_02" src="res/music/jb_02.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_03'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Endgame Levels</a><audio id="jb_03" src="res/music/jb_03.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_04'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Final Level</a><audio id="jb_04" src="res/music/jb_04.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_05'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Party Mode</a><audio id="jb_05" src="res/music/jb_05.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('jb_06'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Menu</a><audio id="jb_06" src="res/music/jb_06.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="project-li">
+            <img src="res/pio-game-mus.png" style="padding: 0; margin: 10px; border: 5px solid black">
+            <div class="music-list">
+                <h3>Parole in One OST</h3>
+                <ul>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('pio_01'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Level Theme (Stealth)</a><audio id="pio_01" src="res/music/pio_01.ogg" preload="none">(No
+                            Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('pio_02'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Level Theme (Chase)</a><audio id="pio_02" src="res/music/pio_02.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                    <li>
+                        <button
+                            onclick="let elem = document.getElementById('pio_03'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                            ▶ </button>
+                        <a>Menu</a><audio id="pio_03" src="res/music/pio_03.ogg" preload="none">(No Audio
+                            Player)</audio>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

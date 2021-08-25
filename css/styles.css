@@ -24,6 +24,16 @@ svg {
     margin: 0;
     size: 100% 30%;
     padding: 0;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #1E1042;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    border-width: 5px;
+    border-color: white;
 }
 
 .nav-button {
@@ -31,21 +41,23 @@ svg {
 }
 
 .floating-icons-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: -40%;
-    margin-bottom: -5%;
-    width: 30%;
-    margin-left: 25%;
-    margin-right: 25%;
-    padding: 10% 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr;
+    margin-top: -30%;
+    margin-bottom: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .floating-icon {
     --random_rot: 0deg;
-    flex-grow: 1;
-    margin: 25%;
-    width: 1fr;
-    transform: rotate(--random_rot)
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 60px;
+    height: 60px;
+    transform: rotate(--random_rot);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
