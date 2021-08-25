@@ -12,12 +12,35 @@
     </style>
 </head>
 
+<script>
+    function initializeIconsInDiv(div) {
+        function randomizeIconRotation(icon) {
+            let rotationVal = (Math.random() * 80 - 40).toString() + "deg"
+            console.log("Rotation Value: ", rotationVal)
+            icon.style.setProperty('transform', `rotate(${rotationVal})`)
+        }
+        function randomizeIconTexture(icon) {
+            let iconNum = Math.floor(Math.random() * 6)
+            icon.src = `./res/small_icons/${iconNum}.png`
+        }
+        let iconsCollection = div.children
+        for (let i = 0; i < iconsCollection.length; i++) {
+            let icon = iconsCollection.item(i)
+            randomizeIconRotation(icon)
+            randomizeIconTexture(icon)
+        }
+    }
+    function initFloatingIcons() {
+        let floatingIconsDiv = document.getElementById("floating_icons_div")
+        initializeIconsInDiv(floatingIconsDiv)
+    }
+</script>
 
-
-<body>
+<body onload="initFloatingIcons()">
 
     <div style="margin: auto; width: 50%">
-        <svg id="visual" viewBox="0 0 900 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+        <svg id="visual" style="border-radius: 25px" viewBox="0 0 900 300" width="100%" height="100%"
+            xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <rect x="0" y="0" width="900" height="300" fill="#1E1042"></rect>
             <path
@@ -42,10 +65,15 @@
                 d="M0 26L13.7 29.2C27.3 32.3 54.7 38.7 82 39.7C109.3 40.7 136.7 36.3 163.8 34.7C191 33 218 34 245.2 30.3C272.3 26.7 299.7 18.3 327 19.2C354.3 20 381.7 30 409 32.3C436.3 34.7 463.7 29.3 491 30.7C518.3 32 545.7 40 573 42C600.3 44 627.7 40 654.8 40C682 40 709 44 736.2 40.5C763.3 37 790.7 26 818 21.2C845.3 16.3 872.7 17.7 886.3 18.3L900 19L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
                 fill="#00c3e6"></path>
         </svg>
+        <div id="floating_icons_div" class="floating-icons-div">
+            <img class="floating-icon" src="res\small_icons\box.png" />
+            <img class="floating-icon" src="res\small_icons\box.png" />
+            <img class="floating-icon" src="res\small_icons\box.png" />
+        </div>
         <h1>
             Lucien's Portfolio V2.0
         </h1>
-        <p>Hi! I'm Lucien, a second-year undergrad student studying at the College of Arts and Sciences at Cornell
+        <p>Hi! I'm Lucien, a third-year undergrad student studying at the College of Arts and Sciences at Cornell
             University.
             I'm currently pursuing a degree in <a
                 href="https://infosci.cornell.edu/undergraduate/info-sci-majors/ba-information-science-college-arts-sciences"
@@ -84,7 +112,6 @@
             If you'd like to contact me, feel free to shoot me an email at
             lucien.eckert@gmail.com
         </p>
-    </div>
     </div>
 
 

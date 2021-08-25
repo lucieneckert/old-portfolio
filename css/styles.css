@@ -29,3 +29,23 @@ svg {
 .nav-button {
     color: white;
 }
+
+.floating-icons-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -40%;
+    margin-bottom: -5%;
+    width: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10% 10%;
+}
+
+.floating-icon {
+    --random_rot: 0deg;
+    flex-grow: 1;
+    margin: 25%;
+    width: 1fr;
+    transform: rotate(--random_rot)
+}
