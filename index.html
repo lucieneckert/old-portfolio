@@ -8,16 +8,18 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="icon" href="./favicon.ico">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+        
     </style>
 </head>
 
 <script>
     function initializeIconsInDiv(div) {
         function randomizeIconRotation(icon) {
-            let rotationVal = (Math.random() * 80 - 40).toString() + "deg"
+            let rotationVal = (Math.random() * 100 - 50).toString() + "deg"
+            let offsetVal = Math.floor(Math.random() * 150 - 75) + "%"
+            let yOffset = Math.floor(Math.random() * 50 - 25) + "%"
             console.log("Rotation Value: ", rotationVal)
-            icon.style.setProperty('transform', `rotate(${rotationVal})`)
+            icon.style.setProperty('transform', `rotate(${rotationVal}) translate(${offsetVal}, ${yOffset})`)
         }
         function randomizeIconTexture(icon) {
             let iconNum = Math.floor(Math.random() * 6)
@@ -29,7 +31,6 @@
                 let icon = iconsCollection.item(i).children[j]
                 randomizeIconRotation(icon)
                 randomizeIconTexture(icon)
-                icon.onClick = () => randomizeIconRotation(icon)
             }
         }
     }
@@ -41,7 +42,7 @@
 
 <body onload="initFloatingIcons();">
 
-    <div style="margin: auto; width: 50%">
+    <div class="inner-body" style="margin: auto; width: 50%">
         <svg id="visual" style="border-radius: 25px" viewBox="0 0 900 300" width="100%" height="100%"
             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <rect x="0" y="0" width="900" height="300" fill="#1E1042"></rect>
@@ -69,20 +70,17 @@
         </svg>
         <div id="floating_icons_div" class="floating-icons-div">
             <i><img class="floating-icon" src="res\small_icons\box.png" />
-                <img class="floating-icon" src="res\small_icons\box.png" />
+            </i>
+            <i> <img class="floating-icon" src="res\small_icons\empty.png" />
             </i>
             <i><img class="floating-icon" src="res\small_icons\box.png" />
-                <img class="floating-icon" src="res\small_icons\box.png" />
             </i>
-            <i><img class="floating-icon" src="res\small_icons\box.png" />
-                <img class="floating-icon" src="res\small_icons\box.png" />
-            </i>
-            <i><img class="floating-icon" src="res\small_icons\box.png" />
-                <img class="floating-icon" src="res\small_icons\box.png" />
+            <i> <img class="floating-icon" src="res\small_icons\empty.png" />
             </i>
         </div>
+        <!-- <img class='light-dark-mode-button' src='res/lightdark.png'/>-->
         <h1>
-            Lucien's Portfolio V2.0
+            Lucien's Portfolio <a class="smalltext">V2.0</a>
         </h1>
         <p>Hi! I'm Lucien, a third-year undergrad student studying at the College of Arts and Sciences at Cornell
             University.
@@ -105,28 +103,31 @@
                     For a list of projects I've worked on, see here:
                 </p>
 
-                <button>
-                    <h3 style="font-size: 120%; color: #c45baa; font-style: normal;">>> <a class="nav-button"
+                <h3 style="font-size: 120%; color: #c45baa; font-style: normal;">>> <a class="nav-button"
                             href="./projects.html">Project
                             List</a>
-                    </h3>
-                </button>
+                </h3>
             </div>
             <div style="display: inline-flexbox; width: 50%; min-width: 200px; padding: 10px; float: right;">
                 <p>
                     For a copy of my resume, see here:
                 </p>
-                <button>
                     <h3 style="font-size: 120%; color: #c45baa; font-style: normal;">>> <a class="nav-button"
                             href="./res/resume.pdf">Resume</a>
                     </h3>
-                </button>
             </div>
         </div>
         <p>
             If you'd like to contact me, feel free to shoot me an email at
             lucien.eckert@gmail.com
         </p>
+        <svg id="visual" style="border-radius: 25px" viewBox="0 0 900 150" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <rect x="0" y="0" width="900" height="150" fill="#1E1042"></rect>
+            <path
+                d="M0 71L12.5 71.7C25 72.3 50 73.7 75 73.3C100 73 125 71 150 75.5C175 80 200 91 225 91.7C250 92.3 275 82.7 300 81.8C325 81 350 89 375 86.8C400 84.7 425 72.3 450 69.3C475 66.3 500 72.7 525 80.8C550 89 575 99 600 98.5C625 98 650 87 675 82C700 77 725 78 750 80.8C775 83.7 800 88.3 825 84.5C850 80.7 875 68.3 887.5 62.2L900 56L900 151L887.5 151C875 151 850 151 825 151C800 151 775 151 750 151C725 151 700 151 675 151C650 151 625 151 600 151C575 151 550 151 525 151C500 151 475 151 450 151C425 151 400 151 375 151C350 151 325 151 300 151C275 151 250 151 225 151C200 151 175 151 150 151C125 151 100 151 75 151C50 151 25 151 12.5 151L0 151Z"
+                fill="#FA69ED" stroke-linecap="round" stroke-linejoin="miter"></path>
+        </svg>
     </div>
 
 
