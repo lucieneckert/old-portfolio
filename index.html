@@ -31,6 +31,10 @@
                 let icon = iconsCollection.item(i).children[j]
                 randomizeIconRotation(icon)
                 randomizeIconTexture(icon)
+                icon.onmouseover = () => {
+                    randomizeIconRotation(icon)
+                    randomizeIconTexture(icon)
+                }
             }
         }
     }
@@ -121,7 +125,8 @@
             If you'd like to contact me, feel free to shoot me an email at
             lucien.eckert@gmail.com
         </p>
-        <svg id="visual" style="border-radius: 25px" viewBox="0 0 900 150" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+        <svg id="bottom-visual" style="border-radius: 25px" viewBox="0 0 900 150" width="100%" height="100%"
+            xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
             <rect x="0" y="0" width="900" height="150" fill="#1E1042"></rect>
             <path
