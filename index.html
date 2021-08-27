@@ -32,8 +32,12 @@
                 randomizeIconRotation(icon)
                 randomizeIconTexture(icon)
                 icon.onmouseover = () => {
-                    randomizeIconRotation(icon)
-                    randomizeIconTexture(icon)
+                    icon.style.setProperty('animation', 'none')
+                    setTimeout(() => {
+                        randomizeIconRotation(icon)
+                        randomizeIconTexture(icon)
+                    }, 125)
+                    setTimeout(() => {icon.style.setProperty('animation', 'fade-out-in 0.25s')}, 0)
                 }
             }
         }

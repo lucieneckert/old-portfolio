@@ -85,7 +85,6 @@ a {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-
 }
 
 .blocky {
@@ -146,17 +145,17 @@ h4 {
         display: none;
     }
 
-    body {
-        width: 800px;
-        margin: auto auto;
-        left: 0%;
-    }
-
-    .inner-body {
-        width: 100%;
-        left: 0%;
-    }
   }
+
+@media only screen and (max-width: 800px) {
+    body {
+        width: 175%;
+        margin-left: -37.5%;
+    }
+    .inner-body {
+        margin-left: -25%;
+    }
+}
 
   .content {
     background-color: #51005c;
@@ -197,5 +196,11 @@ h4 {
 
 @keyframes fade-in {
     0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade-out-in {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
     100% {opacity: 1;}
 }
