@@ -181,6 +181,37 @@ h4 {
     display: inline; float:left; padding: 10px 20px; width: 180px; image-rendering: crisp-edges;
 }
 
+.project-screens {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-cart-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 3px white;
+    border-radius: 10px;
+}
+
+.project-cart-elem {
+    margin: 30px;
+    width: 150px;
+    opacity: 0.8;
+}
+.project-cart-elem:hover {
+    animation: enlarge 0.15s;
+    transform: scale(115%, 115%);
+    opacity: 1;
+}
+.project-cart-elem:active {
+    animation: shake_a_bit 0.15s;
+    animation: dunk 0.15s;
+    transform: scale(115%, 115%);
+}
+
 @media (max-height: 900px) {
     #bottom-visual {
         display: none;
@@ -192,6 +223,16 @@ h4 {
 30% {transform: scale(120%, 80%)}
 60% {transform: scale(90%, 110%)}
 100% { transform: scale(100%, 100%)}
+}
+
+@keyframes enlarge {
+    0% { transform: scale(100%, 100%)}
+    100% { transform: scale(115%, 115%)} 
+}
+
+@keyframes dunk {
+    0% {transform: translate(0%, 15%)}
+    100% {transform: translate(0%, 0%)}
 }
 
 @keyframes fade-in {
