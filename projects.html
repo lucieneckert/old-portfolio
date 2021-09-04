@@ -9,22 +9,55 @@
     <link rel="icon" href="./favicon.ico">
 </head>
 
-<body>
+<script>
+    updateProjectDisplay = (projectId, hideOthers = true) => {
+        const projectDisplayDiv = document.getElementById("project-list")
+        for (let i = 0; i < projectDisplayDiv.children.length; i++) {
+            let displayItem = projectDisplayDiv.children[i]
+            if (hideOthers && !(displayItem.id == projectId))
+                displayItem.style.setProperty("display", "none")
+            else {
+                displayItem.style.setProperty("animation", "")
+                displayItem.style.setProperty("display", "block")
+                setTimeout(() => {
+                    displayItem.style.setProperty("animation", "fade-in 0.5s")
+                    displayItem.style.setProperty("display", "block")
+                }, 0)
+            }
+        }
+    }
+    function expandAll() {
+        updateProjectDisplay(updateProjectDisplay("", false))
+    }
+    function initializeCartClicks() {
+        const cartsDiv = document.getElementById("project-cart-grid")
+        for (let i = 0; i < cartsDiv.children.length; i++) {
+            let cart = cartsDiv.children[i]
+            let id = cart.alt
+            cart.onclick = () => {
+                updateProjectDisplay(id)
+            }
+        }
+    }
+</script>
+
+<body onload="initializeCartClicks()">
     <br>
     <h3 style="font-size: 120%; color: #c45baa; font-style: normal; margin-left: 25%; margin-bottom: 5%;">
         << <a class="nav-button" href="./index.html">Back</a>
     </h3>
     <br>
     <br>
-    <div class="content">
-        <div class="project-list">
-            <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
-            <div class="project-cart-grid">
-                <img class="project-cart-elem" src="res/pio-game.png">
-                <img class="project-cart-elem" src="res/jb-game.png">
-                <img class="project-cart-elem" src="res/game-bg.png">
-            </div>
-            <div class="project-li">
+    <div class="content" id="content">
+        <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
+        <div class="project-cart-grid" id="project-cart-grid">
+            <img class="project-cart-elem" src="res/pio-game.png" alt="pio">
+            <img class="project-cart-elem" src="res/jb-game.png" alt="jb">
+            <img class="project-cart-elem" src="res/game-bg.png" alt="swg">
+        </div>
+        <a style="float: right;" onclick="expandAll()">Expand All</a>
+        <div class="project-list" id="project-list">
+            <div class="project-li" id="swg">
                 <img src="res/game-bg.png" style="margin-top: -10px">
                 <h3>Springs with Guns <a style="font-size: x-small">(Working Title)</a></h3><a style="float: right"> |
                     Status: In Development ▶️</a>
@@ -37,13 +70,43 @@
                 <a>Current progress is updated <a href="https://twitter.com/_leckert">on my twitter feed</a> quite
                     sporadically.</a>
                 <div class="project-screens">
-                    <br>    
+                    <br>
                 </div>
             </div>
+            <div class="project-li" id="jb">
+                <img src="res/jb-game.png" style="margin-top: -10px">
+                <h3>A Small Game About Juiceboxes</h3><a> | September 2020</a><a style="float: right"> | Status:
+                    Completed
+                    ✔️</a>
+                <p class="smalltext">Tools: Godot Engine, Paint.NET, LMMS. </p>
+                <p>My first solo game project made using Godot Engine. Developed over three months in quarantine,
+                    the
+                    focus of this project was to experiment with game "juice" (hence the name) and familiarize
+                    myself
+                    with the process of developing a game from start to finish.</p>
+                <a>More information / downloads at this </a><a href="https://lucien-eckert.itch.io/juicebox">itch.io
+                    page</a>
+            </div>
+            <div class="project-li" id="pio">
+                <img src="res/pio-game.png" style="margin-top: -10px">
+                <h3>Parole in One</h3><a> | May 2020</a><a style="float: right"> | Status:
+                    Completed
+                    ✔️</a>
+                <p class="smalltext">Tools: LibGDX, GIMP, LMMS. </p>
+                <p>Produced during <a href="https://www.cs.cornell.edu/courses/cs3152/2020sp/">INFO 3152:
+                        Introduction
+                        to Game Development</a>. Worked as a designer on a team
+                    of 8 people, primarily focusing on sound design and level design, as well as creating
+                    animations and
+                    facilitating playtesting sessions.</p>
+                <a>More information / downloads at this </a><a href="https://irselin.itch.io/parole-in-one">itch.io
+                    page</a>
+            </div>
+            </div>
 
-        </div>
     </div>
-    <div class="content" style="margin-left: 15%">
+    </div>
+    <div class="content">
         <h2 class='blocky' id="music">MUSIC --</h2>
         <div class="project-li">
             <img src="res/jb-game-mus.png" style="padding: 0; margin: 10px; border: 5px solid black">

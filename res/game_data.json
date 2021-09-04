@@ -1,0 +1,38 @@
+{
+    "jb": {
+        "name": "A Small Game About Juiceboxes",
+        "date": "September 2020",
+        "status": "Completed ✔️",
+        "cart-path": "jb-game",
+        "desc": "My first solo game project made using Godot Engine. Developed over three months in quarantine, the focus of this project was to experiment with game 'juice' (hence the name) and familiarize myself with the process of developing a game from start to finish.",
+        "tools": "Godot Engine, Paint.NET, LMMS.",
+        "more-info": "More information / downloads at https://lucien-eckert.itch.io/juicebox"
+    },
+    "pio": {
+        "name": "Parole in One",
+        "date": "May 2020",
+        "status": "Completed ✔️",
+        "cart-path": "pio-game",
+        "desc": "My first solo game project made using Godot Engine. Developed over three months in quarantine, the focus of this project was to experiment with game 'juice' (hence the name) and familiarize myself with the process of developing a game from start to finish.",
+        "tools": "Godot Engine, Paint.NET, LMMS.",
+        "more-info": "More information / downloads at https://lucien-eckert.itch.io/juicebox"
+    },
+    "ebg": {
+        "name": "A Small Game About Juiceboxes",
+        "date": "September 2020",
+        "status": "Completed ✔️",
+        "cart-path": "jb-game",
+        "desc": "My first solo game project made using Godot Engine. Developed over three months in quarantine, the focus of this project was to experiment with game 'juice' (hence the name) and familiarize myself with the process of developing a game from start to finish.",
+        "tools": "Godot Engine, Paint.NET, LMMS.",
+        "more-info": "More information / downloads at https://lucien-eckert.itch.io/juicebox"
+    },
+    "": {
+        "name": "A Small Game About Juiceboxes",
+        "date": "September 2020",
+        "status": "Completed ✔️",
+        "cart-path": "jb-game",
+        "desc": "My first solo game project made using Godot Engine. Developed over three months in quarantine, the focus of this project was to experiment with game 'juice' (hence the name) and familiarize myself with the process of developing a game from start to finish.",
+        "tools": "Godot Engine, Paint.NET, LMMS.",
+        "more-info": "More information / downloads at https://lucien-eckert.itch.io/juicebox"
+    }
+}
