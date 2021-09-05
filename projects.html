@@ -47,20 +47,20 @@
         cartViewMode = !cartViewMode
     }
     function setCartListDisplay(setTo) {
-            const cartsBgDiv = document.getElementById("cart-grid-bg")
-            cartsBgDiv.style.setProperty("animation", "")
-            let newHeight
-            setTimeout(() => {
-                if (setTo === "compact") {
-                    cartsBgDiv.style.setProperty("animation", "minimize-carts 0.15s linear 0s 1 forwards")
-                    cartsBgDiv.children.item(0).style.setProperty("display", "none")
-                } else {
-                    cartsBgDiv.style.setProperty("animation", "maximize-carts 0.15s linear 0s 1 forwards")
-                    cartsBgDiv.children.item(0).style.setProperty("display", "flex")
-                    cartsBgDiv.children.item(0).style.setProperty("animation", "fade-in 0.2s")
-                }
-            }, 0)
-        }
+        const cartsBgDiv = document.getElementById("cart-grid-bg")
+        cartsBgDiv.style.setProperty("animation", "")
+        let newHeight
+        setTimeout(() => {
+            if (setTo === "compact") {
+                cartsBgDiv.style.setProperty("animation", "minimize-carts 0.15s linear 0s 1 forwards")
+                cartsBgDiv.children.item(0).style.setProperty("display", "none")
+            } else {
+                cartsBgDiv.style.setProperty("animation", "maximize-carts 0.15s linear 0s 1 forwards")
+                cartsBgDiv.children.item(0).style.setProperty("display", "flex")
+                cartsBgDiv.children.item(0).style.setProperty("animation", "fade-in 0.2s")
+            }
+        }, 0)
+    }
     function initializeCartClicks() {
         const cartsDiv = document.getElementById("project-cart-grid")
         for (let i = 0; i < cartsDiv.children.length; i++) {
@@ -73,7 +73,7 @@
     }
 </script>
 
-<body onload="initializeCartClicks()">
+<body onload="initializeCartClicks(); cartModeFocus()">
     <br>
     <h3 style="font-size: 120%; color: #c45baa; font-style: normal; margin-left: 25%; margin-bottom: 5%;">
         << <a class="nav-button" href="./index.html">Back</a>
@@ -83,10 +83,10 @@
     <div class="content" id="content">
         <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
         <a class="view-toggle-box">
-            <img id="view-toggle" class="view-icon" src="res/view-focus.png" alt="Toggle view mode" onclick="toggleCartMode()"/>
+            <img id="view-toggle" class="view-icon" src="res/view-focus.png" alt="Toggle view mode" onclick="toggleCartMode()" />
             View Mode:
         </a>
-        <br/>
+        <br />
         <div class="cart-grid-bg" id="cart-grid-bg">
             <div class="project-cart-grid" id="project-cart-grid">
                 <img class="project-cart-elem" src="res/pio-game.png" alt="pio">
@@ -112,6 +112,20 @@
                     <br>
                 </div>
             </div>
+            <div class="project-li" id="ebg">
+                <img src="res/ebg-game.png" style="margin-top: -10px">
+                <h3>Enjoyable Block Game</h3><a> | May 2021</a><a style="float: right"> | Status:
+                    Draft
+                    📋</a>
+                <p class="smalltext">Tools: Godot Engine, Paint.NET, LMMS. </p>
+                <p>A game made as a final project for
+                    <a href="https://classes.cornell.edu/browse/roster/SP21/class/MUSIC/2701">
+                        MUSIC 2701: Music and Digital Gameplay</a>. The main
+                    focus of the project was to study ways to represent the push and pull of action
+                    and puzzle gameplay elements through sound design.
+                </p>
+                <a>More information / downloads TBD.</a>
+            </div>
             <div class="project-li" id="jb">
                 <img src="res/jb-game.png" style="margin-top: -10px">
                 <h3>A Small Game About Juiceboxes</h3><a> | September 2020</a><a style="float: right"> | Status:
@@ -124,7 +138,7 @@
                     myself
                     with the process of developing a game from start to finish.</p>
                 <a>More information / downloads at this </a><a href="https://lucien-eckert.itch.io/juicebox">itch.io
-                    page</a>
+                    page.</a>
             </div>
             <div class="project-li" id="pio">
                 <img src="res/pio-game.png" style="margin-top: -10px">
@@ -139,9 +153,9 @@
                     animations and
                     facilitating playtesting sessions.</p>
                 <a>More information / downloads at this </a><a href="https://irselin.itch.io/parole-in-one">itch.io
-                    page</a>
+                    page.</a>
             </div>
-            </div>
+        </div>
 
     </div>
     </div>
