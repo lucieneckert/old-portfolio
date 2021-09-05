@@ -10,6 +10,7 @@
 </head>
 
 <script>
+    let cartViewMode = false // true iff list view
     updateProjectDisplay = (projectId, hideOthers = true) => {
         const projectDisplayDiv = document.getElementById("project-list")
         for (let i = 0; i < projectDisplayDiv.children.length; i++) {
@@ -26,9 +27,40 @@
             }
         }
     }
-    function expandAll() {
+    function cartModeList() {
         updateProjectDisplay(updateProjectDisplay("", false))
+        setCartListDisplay("compact")
     }
+    function cartModeFocus() {
+        updateProjectDisplay(updateProjectDisplay("", true))
+        setCartListDisplay("list")
+    }
+    function toggleCartMode() {
+        let viewToggleButton = document.getElementById("view-toggle")
+        if (cartViewMode) {
+            cartModeFocus()
+            viewToggleButton.src = "res/view-focus.png"
+        } else {
+            cartModeList()
+            viewToggleButton.src = "res/view-list.png"
+        }
+        cartViewMode = !cartViewMode
+    }
+    function setCartListDisplay(setTo) {
+            const cartsBgDiv = document.getElementById("cart-grid-bg")
+            cartsBgDiv.style.setProperty("animation", "")
+            let newHeight
+            setTimeout(() => {
+                if (setTo === "compact") {
+                    cartsBgDiv.style.setProperty("animation", "minimize-carts 0.15s linear 0s 1 forwards")
+                    cartsBgDiv.children.item(0).style.setProperty("display", "none")
+                } else {
+                    cartsBgDiv.style.setProperty("animation", "maximize-carts 0.15s linear 0s 1 forwards")
+                    cartsBgDiv.children.item(0).style.setProperty("display", "flex")
+                    cartsBgDiv.children.item(0).style.setProperty("animation", "fade-in 0.2s")
+                }
+            }, 0)
+        }
     function initializeCartClicks() {
         const cartsDiv = document.getElementById("project-cart-grid")
         for (let i = 0; i < cartsDiv.children.length; i++) {
@@ -50,12 +82,19 @@
     <br>
     <div class="content" id="content">
         <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
-        <div class="project-cart-grid" id="project-cart-grid">
-            <img class="project-cart-elem" src="res/pio-game.png" alt="pio">
-            <img class="project-cart-elem" src="res/jb-game.png" alt="jb">
-            <img class="project-cart-elem" src="res/game-bg.png" alt="swg">
+        <a class="view-toggle-box">
+            <img id="view-toggle" class="view-icon" src="res/view-focus.png" alt="Toggle view mode" onclick="toggleCartMode()"/>
+            View Mode:
+        </a>
+        <br/>
+        <div class="cart-grid-bg" id="cart-grid-bg">
+            <div class="project-cart-grid" id="project-cart-grid">
+                <img class="project-cart-elem" src="res/pio-game.png" alt="pio">
+                <img class="project-cart-elem" src="res/jb-game.png" alt="jb">
+                <img class="project-cart-elem" src="res/ebg-game.png" alt="ebg">
+                <img class="project-cart-elem" src="res/game-bg.png" alt="swg">
+            </div>
         </div>
-        <a style="float: right;" onclick="expandAll()">Expand All</a>
         <div class="project-list" id="project-list">
             <div class="project-li" id="swg">
                 <img src="res/game-bg.png" style="margin-top: -10px">
