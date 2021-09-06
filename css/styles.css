@@ -146,24 +146,17 @@ h4 {
         display: none;
     }
 
-  }
+}
 
-@media only screen and (max-width: 800px) {
-    body {
-        width: 175%;
-        margin-left: -37.5%;
-    }
-    .inner-body {
-        margin-left: -25%;
-    }
+.inner-body {
+    margin: auto; 
+    width: 50%;
 }
 
   .content {
     background-color: #1E1042;
     border: 10px solid white;
     border-radius: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
     padding: 20px;
     font-size: larger;
     margin-bottom: 20px;
@@ -219,14 +212,19 @@ h4 {
 
 .project-cart-grid {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    background-color: white;
+    border: 3px white;
+    border-radius: 10px;
+    width: 100%;
    
 }
 
 .project-cart-elem {
     margin: 30px;
+    flex-shrink: 1;
     width: 150px;
     opacity: 0.8;
 }
@@ -246,6 +244,28 @@ h4 {
     #bottom-visual {
         display: none;
     }   
+}
+@media only screen and (max-width: 1200px) {
+    .inner-body {
+        width: 95%;
+    }
+    .content {
+        width: 95%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 0px;
+    }
+    .project-cart-elem {
+        width: 92px;
+        height: 92px;
+        margin: 15px;
+    }
+    .project-cart-grid {
+        height: 126px;
+    }
+    .cart-grid-bg {
+        height: 20%;
+    }
 }
 
 @keyframes shake_a_bit {
@@ -283,5 +303,6 @@ h4 {
 
 @keyframes maximize-carts {
     0% {height: 20px;}
-    100% {height: 210px;}
+    80% {height: 210px;}
+    100% {height: 100%;}
 }
