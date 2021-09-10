@@ -145,7 +145,7 @@ h4 {
 
 .inner-body {
     margin: auto; 
-    width: 50%;
+    width: 1000px;
 }
 
   .content {
@@ -167,25 +167,39 @@ h4 {
 }
 
 .project-li img{
-    display: inline; float:left;  width: 180px; image-rendering: crisp-edges;
+    float:left; image-rendering: crisp-edges;
 }
 
 .cart-image {
     padding: 10px 10px;
     display: inline;
+    width: 180px;
 }
 
 .album-cover {
     padding: 0px; 
     margin: 10px; 
-    border: 5px solid black
+    border: 5px solid black;
+    width: 180px
 }
 
 
 .project-screens {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.project-screenshot {
+    display: flex;
+    flex-grow: 1fr;
+    flex-shrink: 1fr;
+    border-radius: 10px;
+    padding: 5px;
+    width: 400px;
 }
 
 .view-toggle-box {
@@ -247,6 +261,10 @@ h4 {
     transform: scale(115%, 115%);
 }
 
+.dev-progress {
+    float: right
+}
+
 @media (max-height: 900px) {
     #bottom-visual {
         display: none;
@@ -277,6 +295,32 @@ h4 {
     }
     .cart-grid-bg {
         height: 20%;
+    }
+    .cart-image {
+        display: block;
+        width: 360px;
+    }
+    .dev-progress {
+        float: left;
+        font-size: 80%;
+        color: lightgray;
+    }
+    .smalltext {
+        margin-bottom: 10px;
+        font-size: 80%;
+        display: block;
+        float: left;
+    }   
+    .project-date {
+        display: block;
+        font-size: 80%;
+        color: lightgray;
+    }
+    h3 {
+        display: block;
+    }
+    p {
+        display: block;
     }
 }
 
