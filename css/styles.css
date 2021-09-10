@@ -18,11 +18,6 @@ h1 {
     color: white
 }
 
-p {
-    text-align: justify;
-    font-size: 20px;
-}
-
 svg {
     margin: 0;
     size: 100% 30%;
@@ -98,7 +93,7 @@ a {
 }
 
 .smalltext {
-    color: grey;
+    color: lightgray;
     margin: 0 auto;
     font-size: small;
     padding-top: 0px;
@@ -172,8 +167,20 @@ h4 {
 }
 
 .project-li img{
-    display: inline; float:left; padding: 10px 20px; width: 180px; image-rendering: crisp-edges;
+    display: inline; float:left;  width: 180px; image-rendering: crisp-edges;
 }
+
+.cart-image {
+    padding: 10px 10px;
+    display: inline;
+}
+
+.album-cover {
+    padding: 0px; 
+    margin: 10px; 
+    border: 5px solid black
+}
+
 
 .project-screens {
     display: flex;
@@ -246,14 +253,18 @@ h4 {
     }   
 }
 @media only screen and (max-width: 1200px) {
+    body {
+        font-size: 32px;
+    }
     .inner-body {
-        width: 95%;
+        width: 96%;
+        padding: 2%;
     }
     .content {
         width: 95%;
         margin-left: 0%;
         margin-right: 0%;
-        padding: 0px;
+        padding: 10px;
     }
     .project-cart-elem {
         width: 92px;
@@ -262,6 +273,7 @@ h4 {
     }
     .project-cart-grid {
         height: 126px;
+        padding: 0px;
     }
     .cart-grid-bg {
         height: 20%;
