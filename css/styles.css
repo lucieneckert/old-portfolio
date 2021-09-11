@@ -18,11 +18,6 @@ h1 {
     color: white
 }
 
-p {
-    text-align: justify;
-    font-size: 20px;
-}
-
 svg {
     margin: 0;
     size: 100% 30%;
@@ -98,7 +93,7 @@ a {
 }
 
 .smalltext {
-    color: grey;
+    color: lightgray;
     margin: 0 auto;
     font-size: small;
     padding-top: 0px;
@@ -146,24 +141,17 @@ h4 {
         display: none;
     }
 
-  }
+}
 
-@media only screen and (max-width: 800px) {
-    body {
-        width: 175%;
-        margin-left: -37.5%;
-    }
-    .inner-body {
-        margin-left: -25%;
-    }
+.inner-body {
+    margin: auto; 
+    width: 1000px;
 }
 
   .content {
     background-color: #1E1042;
     border: 10px solid white;
     border-radius: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
     padding: 20px;
     font-size: larger;
     margin-bottom: 20px;
@@ -179,13 +167,39 @@ h4 {
 }
 
 .project-li img{
-    display: inline; float:left; padding: 10px 20px; width: 180px; image-rendering: crisp-edges;
+    float:left; image-rendering: crisp-edges;
 }
+
+.cart-image {
+    padding: 10px 10px;
+    display: inline;
+    width: 180px;
+}
+
+.album-cover {
+    padding: 0px; 
+    margin: 10px; 
+    border: 5px solid black;
+    width: 180px
+}
+
 
 .project-screens {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.project-screenshot {
+    display: flex;
+    flex-grow: 1fr;
+    flex-shrink: 1fr;
+    border-radius: 10px;
+    padding: 5px;
+    width: 400px;
 }
 
 .view-toggle-box {
@@ -219,14 +233,19 @@ h4 {
 
 .project-cart-grid {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    background-color: white;
+    border: 3px white;
+    border-radius: 10px;
+    width: 100%;
    
 }
 
 .project-cart-elem {
     margin: 30px;
+    flex-shrink: 1;
     width: 150px;
     opacity: 0.8;
 }
@@ -242,10 +261,67 @@ h4 {
     transform: scale(115%, 115%);
 }
 
+.dev-progress {
+    float: right
+}
+
 @media (max-height: 900px) {
     #bottom-visual {
         display: none;
     }   
+}
+@media only screen and (max-width: 1200px) {
+    body {
+        font-size: 32px;
+    }
+    .inner-body {
+        width: 96%;
+        padding: 2%;
+    }
+    .content {
+        width: 95%;
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 10px;
+    }
+    .project-cart-elem {
+        width: 92px;
+        height: 92px;
+        margin: 15px;
+    }
+    .project-cart-grid {
+        height: 126px;
+        padding: 0px;
+    }
+    .cart-grid-bg {
+        height: 20%;
+    }
+    .cart-image {
+        display: block;
+        width: 360px;
+    }
+    .dev-progress {
+        float: left;
+        font-size: 80%;
+        color: lightgray;
+    }
+    .smalltext {
+        margin-bottom: 10px;
+        font-size: 80%;
+        display: block;
+        float: left;
+    }   
+    .project-date {
+        display: block;
+        font-size: 80%;
+        color: lightgray;
+    }
+    h3 {
+        display: block;
+    }
+    p {
+        display: block;
+    }
 }
 
 @keyframes shake_a_bit {
@@ -283,5 +359,6 @@ h4 {
 
 @keyframes maximize-carts {
     0% {height: 20px;}
-    100% {height: 210px;}
+    80% {height: 210px;}
+    100% {height: 100%;}
 }
