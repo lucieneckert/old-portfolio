@@ -1,100 +1,31 @@
-<!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/site.css">
     <title>Index</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="./favicon.ico">
-    <style>
-
-    </style>
 </head>
-
-<script>
-    function initializeIconsInDiv(div) {
-        function randomizeIconRotation(icon) {
-            let rotationVal = (Math.random() * 100 - 50).toString() + "deg"
-            let offsetVal = Math.floor(Math.random() * 150 - 75) + "%"
-            let yOffset = Math.floor(Math.random() * 50 - 25) + "%"
-            console.log("Rotation Value: ", rotationVal)
-            icon.style.setProperty('transform', `rotate(${rotationVal}) translate(${offsetVal}, ${yOffset})`)
-        }
-        function randomizeIconTexture(icon) {
-            let iconNum = Math.floor(Math.random() * 6)
-            icon.src = `./res/small_icons/${iconNum}.png`
-        }
-        let iconsCollection = div.children
-        for (let i = 0; i < iconsCollection.length; i++) {
-            for (let j = 0; j < iconsCollection.item(i).children.length; j++) {
-                let icon = iconsCollection.item(i).children[j]
-                randomizeIconRotation(icon)
-                randomizeIconTexture(icon)
-                icon.onmouseover = () => {
-                    icon.style.setProperty('animation', 'none')
-                    setTimeout(() => {
-                        randomizeIconRotation(icon)
-                        randomizeIconTexture(icon)
-                    }, 125)
-                    setTimeout(() => { icon.style.setProperty('animation', 'fade-out-in 0.25s') }, 0)
-                }
-            }
-        }
-    }
-    function initFloatingIcons() {
-        let floatingIconsDiv = document.getElementById("floating_icons_div")
-        initializeIconsInDiv(floatingIconsDiv)
-    }
-</script>
-
-<body onload="initFloatingIcons();">
-
-    <div class="inner-body">
-        <header>
-            <svg id="visual" style="border-radius: 25px" viewBox="0 0 900 300" width="100%" height="100%"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-                <rect x="0" y="0" width="900" height="300" fill="#1E1042"></rect>
-                <path
-                    d="M0 277L13.7 265.2C27.3 253.3 54.7 229.7 82 213.7C109.3 197.7 136.7 189.3 163.8 200C191 210.7 218 240.3 245.2 244.3C272.3 248.3 299.7 226.7 327 220C354.3 213.3 381.7 221.7 409 221C436.3 220.3 463.7 210.7 491 218C518.3 225.3 545.7 249.7 573 247.5C600.3 245.3 627.7 216.7 654.8 204.3C682 192 709 196 736.2 199.5C763.3 203 790.7 206 818 213.8C845.3 221.7 872.7 234.3 886.3 240.7L900 247L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#fa69ed"></path>
-                <path
-                    d="M0 185L13.7 180.7C27.3 176.3 54.7 167.7 82 165C109.3 162.3 136.7 165.7 163.8 173.5C191 181.3 218 193.7 245.2 191.5C272.3 189.3 299.7 172.7 327 165.8C354.3 159 381.7 162 409 175.7C436.3 189.3 463.7 213.7 491 217.2C518.3 220.7 545.7 203.3 573 190.2C600.3 177 627.7 168 654.8 172.8C682 177.7 709 196.3 736.2 205.7C763.3 215 790.7 215 818 218.8C845.3 222.7 872.7 230.3 886.3 234.2L900 238L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#c28aff"></path>
-                <path
-                    d="M0 186L13.7 176C27.3 166 54.7 146 82 136.2C109.3 126.3 136.7 126.7 163.8 127.3C191 128 218 129 245.2 130.2C272.3 131.3 299.7 132.7 327 134.7C354.3 136.7 381.7 139.3 409 149C436.3 158.7 463.7 175.3 491 176.7C518.3 178 545.7 164 573 157.8C600.3 151.7 627.7 153.3 654.8 159.7C682 166 709 177 736.2 174.2C763.3 171.3 790.7 154.7 818 152.8C845.3 151 872.7 164 886.3 170.5L900 177L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#889fff"></path>
-                <path
-                    d="M0 108L13.7 113C27.3 118 54.7 128 82 133.2C109.3 138.3 136.7 138.7 163.8 136.3C191 134 218 129 245.2 122.7C272.3 116.3 299.7 108.7 327 113.7C354.3 118.7 381.7 136.3 409 146.8C436.3 157.3 463.7 160.7 491 155.7C518.3 150.7 545.7 137.3 573 137.3C600.3 137.3 627.7 150.7 654.8 149.5C682 148.3 709 132.7 736.2 126.8C763.3 121 790.7 125 818 127.3C845.3 129.7 872.7 130.3 886.3 130.7L900 131L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#58acff"></path>
-                <path
-                    d="M0 104L13.7 101.3C27.3 98.7 54.7 93.3 82 88.2C109.3 83 136.7 78 163.8 79C191 80 218 87 245.2 95C272.3 103 299.7 112 327 114.3C354.3 116.7 381.7 112.3 409 112.2C436.3 112 463.7 116 491 120.2C518.3 124.3 545.7 128.7 573 126.2C600.3 123.7 627.7 114.3 654.8 104C682 93.7 709 82.3 736.2 87C763.3 91.7 790.7 112.3 818 111.7C845.3 111 872.7 89 886.3 78L900 67L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#2eb5fb"></path>
-                <path
-                    d="M0 98L13.7 92.7C27.3 87.3 54.7 76.7 82 73.3C109.3 70 136.7 74 163.8 72.7C191 71.3 218 64.7 245.2 60.7C272.3 56.7 299.7 55.3 327 54.7C354.3 54 381.7 54 409 61.2C436.3 68.3 463.7 82.7 491 83C518.3 83.3 545.7 69.7 573 61.5C600.3 53.3 627.7 50.7 654.8 56.3C682 62 709 76 736.2 82C763.3 88 790.7 86 818 85C845.3 84 872.7 84 886.3 84L900 84L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#00bdf2"></path>
-                <path
-                    d="M0 26L13.7 29.2C27.3 32.3 54.7 38.7 82 39.7C109.3 40.7 136.7 36.3 163.8 34.7C191 33 218 34 245.2 30.3C272.3 26.7 299.7 18.3 327 19.2C354.3 20 381.7 30 409 32.3C436.3 34.7 463.7 29.3 491 30.7C518.3 32 545.7 40 573 42C600.3 44 627.7 40 654.8 40C682 40 709 44 736.2 40.5C763.3 37 790.7 26 818 21.2C845.3 16.3 872.7 17.7 886.3 18.3L900 19L900 0L886.3 0C872.7 0 845.3 0 818 0C790.7 0 763.3 0 736.2 0C709 0 682 0 654.8 0C627.7 0 600.3 0 573 0C545.7 0 518.3 0 491 0C463.7 0 436.3 0 409 0C381.7 0 354.3 0 327 0C299.7 0 272.3 0 245.2 0C218 0 191 0 163.8 0C136.7 0 109.3 0 82 0C54.7 0 27.3 0 13.7 0L0 0Z"
-                    fill="#00c3e6"></path>
-            </svg>
-        </header>
-        <div id="floating_icons_div" class="floating-icons-div">
-            <i><img class="floating-icon" src="res\small_icons\box.png" alt="" />
-            </i>
-            <i> <img class="floating-icon" src="res\small_icons\empty.png" alt="" />
-            </i>
-            <i><img class="floating-icon" src="res\small_icons\box.png" alt="" />
-            </i>
-            <i> <img class="floating-icon" src="res\small_icons\empty.png" alt="" />
-            </i>
+<body>
+    <header>
+        <div class='index-flex'>
+            <img class='logo' src="res/cat2.jpg" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">index</a></li>
+                    <li><a href="projects.html">projects</a></li>
+                    <li><a href="blog.html">blog</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- <img class='light-dark-mode-button' src='res/lightdark.png'/>-->
-        <h1>
-            Lucien's Portfolio <a class="smalltext">V2.0</a>
-        </h1>
-        <p>Hi! I'm Lucien, a third-year undergrad student studying at the College of Arts and Sciences at Cornell
+    </header>
+    <section class='main'>
+        <h1>Lucien's Portfolio <a>V.3.0</a></h1>
+        <article>
+            <p>
+                Hi! I'm Lucien, a third-year undergrad student studying at the College of Arts and Sciences at Cornell
             University.
-            I'm currently pursuing a degree in <a
+            I'm currently pursuing a bachelor's degree in <a
                 href="https://infosci.cornell.edu/undergraduate/info-sci-majors/ba-information-science-college-arts-sciences"
                 target="_blank">Information
                 Science</a>, with a
@@ -105,49 +36,32 @@
             to describe and keep track of the projects
             I've
             been working on in my own time.
-        </p>
-
-        <div class="container" style="margin-bottom: 50px; display: flex;">
-            <div style="display: inline-flexbox; width: 50%; min-width: 200px; padding: 10px; float: left;">
-                <p>
-                    For a list of projects I've worked on, see here:
-                </p>
-
-                <a style="font-size: 120%; color: #c45baa; font-style: normal;">>> <a class="nav-button"
-                        href="./projects.html">Project
-                        List</a>
+            </p>
+        </article>
+        <section class='index-flex'>
+            <section class='index-card'>
+                For a list of projects I've worked on, see here:
+                <a href="/projects.html">
+                    <div class='button-card'>
+                        <h2>View Projects</h2>
+                        <p>Game Dev * Game Design * Music</p>
+                    </div>
                 </a>
-            </div>
-            <div style="display: inline-flexbox; width: 50%; min-width: 200px; padding: 10px; float: right;">
-                <p>
+            </section>
+            <div class='index-flex col'>
+                <section class='index-card'>
                     For a copy of my resume, see here:
-                </p>
-                <a style="font-size: 120%; color: #c45baa; font-style: normal;">>> <a class="nav-button"
-                        href="./res/resume.pdf">Resume</a>
-                </a>
+                    <ul>
+                        <li>>> Design Resume</li>
+                        <li>>> Dev Resume</li>
+                    </ul>
+                </section>
+                <section class='index-card'>
+                    To contact me, feel free to email me at 
+                    <em>lee48@cornell.edu</em>
+                </section>
             </div>
-        </div>
-        <p>
-            If you'd like to contact me, feel free to shoot me an email at
-            lucien.eckert@gmail.com
-        </p>
-        <footer>
-            <svg id="bottom-visual" style="border-radius: 25px" viewBox="0 0 900 150" width="100%" height="100%"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-                <rect x="0" y="0" width="900" height="150" fill="#1E1042"></rect>
-                <path
-                    d="M0 71L12.5 71.7C25 72.3 50 73.7 75 73.3C100 73 125 71 150 75.5C175 80 200 91 225 91.7C250 92.3 275 82.7 300 81.8C325 81 350 89 375 86.8C400 84.7 425 72.3 450 69.3C475 66.3 500 72.7 525 80.8C550 89 575 99 600 98.5C625 98 650 87 675 82C700 77 725 78 750 80.8C775 83.7 800 88.3 825 84.5C850 80.7 875 68.3 887.5 62.2L900 56L900 151L887.5 151C875 151 850 151 825 151C800 151 775 151 750 151C725 151 700 151 675 151C650 151 625 151 600 151C575 151 550 151 525 151C500 151 475 151 450 151C425 151 400 151 375 151C350 151 325 151 300 151C275 151 250 151 225 151C200 151 175 151 150 151C125 151 100 151 75 151C50 151 25 151 12.5 151L0 151Z"
-                    fill="#FA69ED" stroke-linecap="round" stroke-linejoin="miter"></path>
-            </svg>
-        </footer>
-    </div>
-
-
-
-
-
+        </section>
+    </section>
 </body>
-
-
-
 </html>

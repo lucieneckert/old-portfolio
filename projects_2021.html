@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<script>
+    let cartViewMode = false // true iff list view
+    updateProjectDisplay = (projectId, hideOthers = true) => {
+        const projectDisplayDiv = document.getElementById("project-list")
+        for (let i = 0; i < projectDisplayDiv.children.length; i++) {
+            let displayItem = projectDisplayDiv.children[i]
+            if (hideOthers && !(displayItem.id == projectId))
+                displayItem.style.setProperty("display", "none")
+            else {
+                displayItem.style.setProperty("animation", "")
+                displayItem.style.setProperty("display", "block")
+                setTimeout(() => {
+                    displayItem.style.setProperty("animation", "fade-in 0.5s")
+                    displayItem.style.setProperty("display", "block")
+                }, 0)
+            }
+        }
+    }
+    function cartModeList() {
+        updateProjectDisplay(updateProjectDisplay("", false))
+        setCartListDisplay("compact")
+    }
+    function cartModeFocus() {
+        updateProjectDisplay(updateProjectDisplay("", true))
+        setCartListDisplay("list")
+    }
+    function toggleCartMode() {
+        let viewToggleButton = document.getElementById("view-toggle")
+        if (cartViewMode) {
+            cartModeFocus()
+            viewToggleButton.src = "res/view-focus.png"
+        } else {
+            cartModeList()
+            viewToggleButton.src = "res/view-list.png"
+        }
+        cartViewMode = !cartViewMode
+    }
+    function setCartListDisplay(setTo) {
+        const cartsBgDiv = document.getElementById("cart-grid-bg")
+        cartsBgDiv.style.setProperty("animation", "")
+        let newHeight
+        setTimeout(() => {
+            if (setTo === "compact") {
+                cartsBgDiv.style.setProperty("animation", "minimize-carts 0.15s linear 0s 1 forwards")
+                cartsBgDiv.children.item(0).style.setProperty("display", "none")
+            } else {
+                cartsBgDiv.style.setProperty("animation", "maximize-carts 0.15s linear 0s 1 forwards")
+                cartsBgDiv.children.item(0).style.setProperty("display", "flex")
+                cartsBgDiv.children.item(0).style.setProperty("animation", "fade-in 0.2s")
+            }
+        }, 0)
+    }
+    function initializeCartClicks() {
+        const cartsDiv = document.getElementById("project-cart-grid")
+        for (let i = 0; i < cartsDiv.children.length; i++) {
+            let cart = cartsDiv.children[i]
+            let id = cart.alt
+            cart.onclick = () => {
+                updateProjectDisplay(id)
+            }
+        }
+    }
+</script>
+
+<body onload="initializeCartClicks(); cartModeFocus()">
+    <br>
+    <h3 style="font-size: 120%; color: #c45baa; font-style: normal; margin-left: 30%; margin-bottom: 5%;">
+        << <a class="nav-button" href="./index.html">Back</a>
+    </h3>
+    <br>
+    <br>
+    <div class="inner-body">
+        <div class="content" id="content">
+            <h2 class="blocky" id="gamedesign">GAME DESIGN --</h2>
+            <a class="view-toggle-box">
+                <img id="view-toggle" class="view-icon" src="res/view-focus.png" alt="Toggle view mode"
+                    onclick="toggleCartMode()" />
+                View Mode:
+            </a>
+            <br />
+            <div class="cart-grid-bg" id="cart-grid-bg">
+                <div class="project-cart-grid" id="project-cart-grid">
+                    <img class="project-cart-elem" src="res/pio-game.png" alt="pio">
+                    <img class="project-cart-elem" src="res/jb-game.png" alt="jb">
+                    <img class="project-cart-elem" src="res/ebg-game.png" alt="ebg">
+                    <img class="project-cart-elem" src="res/swg-game.png" alt="swg">
+                </div>
+            </div>
+            <div class="project-list" id="project-list">
+                <div class="project-li" id="swg">
+                    <img class="cart-image" src="res/swg-game.png" style="margin-top: -10px"/>
+                    <h3>Springs with Guns <a style="font-size: x-small">(Working Title)</a></h3><a class="dev-progress">
+                        |
+                        Status: In Development ▶️</a>
+                    <br>
+                    <p class="smalltext">Tools: Godot Engine. </p>
+                    <p>Currently in the prototyping phase. An attempt to create a reusable fighting game template, then
+                        produce a casual fighting game out of it with an emphasis on simple controls and a
+                        reliance on the interaction
+                        between spring
+                        physics and gun recoil for movement.</p>
+                    <a>Current progress is updated <a href="https://twitter.com/_leckert">on my twitter feed</a> quite
+                        sporadically.</a>
+                    <div class="project-screens">
+                        <img class="project-screenshot" src="res/screenshots/swg_0.png" alt="main menu UI design"/>
+                        <img class="project-screenshot" src="res/screenshots/swg_1.png" alt="forest stage, pre battle"/>
+                        <img class="project-screenshot" src="res/screenshots/swg_2.png" alt="snowy mountain stage"/>
+                        <img class="project-screenshot" src="res/screenshots/swg_3.png" alt="large test environment spring movement"/>
+                    </div>
+                </div>
+                <div class="project-li" id="ebg">
+                    <img class="cart-image" src="res/ebg-game.png" style="margin-top: -10px">
+                    <h3>Enjoyable Block Game</h3><a class="project-date"> | May 2021</a><a class="dev-progress"> | Status:
+                        Draft
+                        📋</a>
+                    <br>
+                    <a class="smalltext">Tools: Godot Engine, Paint.NET, LMMS. </a>
+                    <p>A game made as a final project for
+                        <a href="https://classes.cornell.edu/browse/roster/SP21/class/MUSIC/2701">
+                            MUSIC 2701: Music and Digital Gameplay</a>. The main
+                        focus of the project was to study ways to represent the push and pull of action
+                        and puzzle gameplay elements through sound design.
+                    </p>
+                    <a>More information / downloads TBD.</a>
+                </div>
+                <div class="project-li" id="jb">
+                    <img class="cart-image" src="res/jb-game.png" style="margin-top: -10px">
+                    <h3>A Small Game About Juiceboxes</h3><a class="project-date"> | September 2020</a><a class="dev-progress"> | Status:
+                        Completed
+                        ✔️</a>
+                    <br>
+                    <a class="smalltext">Tools: Godot Engine, Paint.NET, LMMS. </a>
+                    <p>My first solo game project made using Godot Engine. Developed over three months in quarantine,
+                        the
+                        focus of this project was to experiment with game "juice" (hence the name) and familiarize
+                        myself
+                        with the process of developing a game from start to finish.</p>
+                    <a>More information / downloads at this </a><a href="https://lucien-eckert.itch.io/juicebox">itch.io
+                        page.</a>
+                    <div class="project-screens">
+                        <img class="project-screenshot" src="res/screenshots/jb_0.png" alt="main gameplay screenshot"/>
+                        <img class="project-screenshot" src="res/screenshots/jb_1.png" alt="multiplayer gameplay screenshot"/>
+                        <img class="project-screenshot" src="res/screenshots/jb_2.png" alt="main menu UI screenshot"/>
+                        <img class="project-screenshot" src="res/screenshots/jb_3.png" alt="party mode UI screenshot"/>
+                    </div>
+                </div>
+                <div class="project-li" id="pio">
+                    <img class="cart-image" src="res/pio-game.png" style="margin-top: -10px">
+                    <h3>Parole in One</h3><a class="project-date"> | May 2020</a><a class="dev-progress"> | Status:
+                        Completed
+                        ✔️</a>
+                    <br>
+                    <a class="smalltext">Tools: LibGDX, GIMP, LMMS. </a>
+                    <p>Produced during <a href="https://www.cs.cornell.edu/courses/cs3152/2020sp/">INFO 3152:
+                            Introduction
+                            to Game Development</a>. Worked as a designer on a team
+                        of 8 people, primarily focusing on sound design and level design, as well as creating
+                        animations and
+                        facilitating playtesting sessions.</p>
+                    <a>More information / downloads at this </a><a href="https://irselin.itch.io/parole-in-one">itch.io
+                        page.</a>
+                        <div class="project-screens">
+                            <img class="project-screenshot" src="res/screenshots/pio_0.png" alt="complex level gameplay screenshot"/>
+                            <img class="project-screenshot" src="res/screenshots/pio_1.png" alt="puzzle level gameplay screenshot"/>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content">
+            <h2 class='blocky' id="music">MUSIC --</h2>
+            <div class="project-li">
+                <img class="album-cover" src="res/jb-game-mus.png" alt="A Small Game About Juiceboxes OST album art">
+                <div class="music-list">
+                    <h3>A Small Game About Juiceboxes OST</h3>
+                    <ul>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_01'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Early Levels </a><audio id="jb_01" src="res/music/jb_01.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_02'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Midgame Levels</a><audio id="jb_02" src="res/music/jb_02.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_03'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Endgame Levels</a><audio id="jb_03" src="res/music/jb_03.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_04'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Final Level</a><audio id="jb_04" src="res/music/jb_04.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_05'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Party Mode</a><audio id="jb_05" src="res/music/jb_05.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('jb_06'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Menu</a><audio id="jb_06" src="res/music/jb_06.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-li">
+                <img class="album-cover" src="res/pio-game-mus.png" >
+                <div class="music-list">
+                    <h3>Parole in One OST</h3>
+                    <ul>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('pio_01'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Level Theme (Stealth)</a><audio id="pio_01" src="res/music/pio_01.ogg" preload="none">(No
+                                Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('pio_02'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Level Theme (Chase)</a><audio id="pio_02" src="res/music/pio_02.ogg" preload="none">(No
+                                Audio
+                                Player)</audio>
+                        </li>
+                        <li>
+                            <button
+                                onclick="let elem = document.getElementById('pio_03'); if (elem.paused) { elem.play(); this.innerHTML = '⏸'; } else { elem.pause(); this.innerHTML = '▶' }">
+                                ▶ </button>
+                            <a>Menu</a><audio id="pio_03" src="res/music/pio_03.ogg" preload="none">(No Audio
+                                Player)</audio>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
