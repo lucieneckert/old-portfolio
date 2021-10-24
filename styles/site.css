@@ -20,6 +20,10 @@ body {
           animation: fade-in 0.25s;
 }
 
+img {
+  max-width: 1000px;
+}
+
 h1 {
   font-size: 2em;
   border-left: 10px solid #2b2b2b;
