@@ -188,11 +188,14 @@ button {
   display: block;
   font-size: 1em;
   border: none;
+  color: white;
 }
 
 button:hover {
   background-color: white;
   cursor: pointer;
+  border: 2px solid;
+  margin-bottom: 6px;
   border-color: purple;
   color: purple;
 }
@@ -232,6 +235,12 @@ button:hover {
   cursor: pointer;
 }
 
+blockquote {
+  background-color: lightgrey;
+  border-left: 4px solid grey;
+  padding: 10px;
+}
+
 .project-info-gallery {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -250,6 +259,13 @@ button:hover {
 
 .project-info-gallery .medium {
   max-width: 200px;
+}
+
+.project-info-gallery figcaption {
+  padding: 10px;
+  font-size: 0.8em;
+  width: 380px;
+  background-color: lightgrey;
 }
 
 @-webkit-keyframes grow-bg-image {
