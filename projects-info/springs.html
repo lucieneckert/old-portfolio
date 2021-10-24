@@ -3,24 +3,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/site.css">
+    <link rel="stylesheet" href="../styles/site.css">
     <title>Blog</title>
 </head>
 <body>
     <header>
         <div class='index-flex'>
-            <img class='logo' src="res/cat2.jpg" alt="Logo">
+            <img class='logo' src="../res/cat2.jpg" alt="Logo">
             <nav>
                 <ul>
-                    <li><a href="index.html">index</a></li>
-                    <li><a href="projects.html">projects</a></li>
-                    <li><a href="blog.html">blog</a></li>
+                    <li><a href="../index.html">index</a></li>
+                    <li><a href="../projects.html">projects</a></li>
+                    <li><a href="../blog.html">blog</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <section class='main'>
-        <h2>Under Construction...</h2>
+        <h2>Springs With Guns (Working Title)</h2>
+        <p>
+            Currently in the prototyping/early-development phase. An attempt to
+            produce a casual platform fighting game with an emphasis on simple controls and a
+            reliance on the interaction
+            between spring
+            physics and gun recoil for movement.
+        </p>
+        
+        <p>
+            It's taking a while to refine the movement system. Making things "springy" with Godot Engine's
+            built-in physics engine wasn't immediately obvious -- especially when it was important for
+            the player to be able to manually compress it and use the release as the primary force of
+            movement. Here are some iterations the player character's physics went through:
+        </p>
+        
+        <div class='project-info-gallery'>
+            <figure class='large'><video controls src="../res/project-info-res/swg/initial_0.mp4"></video>
+                <figcaption>Initial model of the springy player. Uses a box with spring joints that resists the inwards
+                    forces of the top and bottom "planes." Fakes the release force by bumping the player upwards.
+                </figcaption>
+            </figure>
+            <figure class='large'><video controls src="../res/project-info-res/swg/initial_1.mp4"></video>
+                <figcaption>The next iteration of the springy player. More "realistic" spring-like construction, with more
+                    accurate compression and less-obvious extra force added to improve the feel of the release. However,
+                    it's prone to getting tangled up in itself and flying away...
+                </figcaption>
+            </figure>
+            <figure class='large'><video controls src="../res/project-info-res/swg/initial_2.mp4"></video>
+                <figcaption>The near-current iteration of the springy player. Higher-resistence overall
+                    works to combat tangling, while still visually reflecting a "springy" feel. The arrows
+                    are a debug feature showing where the game expects to add a bit of force to help the
+                    player move when the spring contraction is released. Still somewhat buggy at that point.
+                </figcaption>
+            </figure>
+        </div>
+        
+        <p>Even after refining the springy composition of the player, the "tangling-up" problem was still
+            present after getting hit by another player's bullet:
+        </p>
+        
+        <video controls src="../res/project-info-res/swg/tangle-and-camera.mp4"></video>
+
     </section>
+    <a href="../projects.html"><button>Back to Projects</button></a>
 </body>
 </html>

@@ -24,6 +24,10 @@ img {
   max-width: 1000px;
 }
 
+video {
+  max-width: 1000px;
+}
+
 h1 {
   font-size: 2em;
   border-left: 10px solid #2b2b2b;
@@ -41,6 +45,21 @@ h1 {
       -ms-flex-direction: row;
           flex-direction: row;
   margin: 0px auto;
+}
+
+.spacious-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .project-flex {
@@ -90,7 +109,7 @@ h1 {
 }
 
 .highlighted-project-desc {
-  max-width: 500px;
+  max-width: 470px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -257,12 +276,30 @@ blockquote {
   max-width: 400px;
 }
 
+.project-info-gallery video {
+  width: 400px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .project-info-gallery .small {
   max-width: 100px;
 }
 
 .project-info-gallery .medium {
   max-width: 200px;
+}
+
+.project-info-gallery .large {
+  max-width: none;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.project-info-gallery .rounded {
+  border-radius: 10px;
 }
 
 .project-info-gallery figcaption {
