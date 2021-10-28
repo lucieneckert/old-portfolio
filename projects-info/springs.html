@@ -20,7 +20,14 @@
         </div>
     </header>
     <section class='main'>
-        <h2>Springs With Guns (Working Title)</h2>
+        <h1>Springs With Guns (Working Title)</h1>
+        <section class='project-info-summary'>
+            <p>In Development</p>
+            <ul class='tools-list'>
+                <li>Godot Engine</li>
+                <li>Paint.NET</li>
+            </ul>
+        </section>
         <p>
             Currently in the prototyping/early-development phase. An attempt to
             produce a casual platform fighting game with an emphasis on simple controls and a
@@ -55,15 +62,48 @@
                     player move when the spring contraction is released. Still somewhat buggy at that point.
                 </figcaption>
             </figure>
+            <figure class='large'><video controls src="../res/project-info-res/swg/tangle-and-camera.mp4"></video>
+                <figcaption>Even after refining the springy composition of the player, the "tangling-up" problem was still
+                    present after getting hit by another player's bullet:
+                </figcaption>
+            </figure>
         </div>
-        
-        <p>Even after refining the springy composition of the player, the "tangling-up" problem was still
-            present after getting hit by another player's bullet:
+
+        <p>
+            Currently, the game is playable with two players in a slightly-polished prototype form. The physics
+            have hit a nice balance between realistic and game-y, hopefully resulting in a movement system that
+            gives off an easy-to-learn, hard to master vibe. 
         </p>
-        
-        <video controls src="../res/project-info-res/swg/tangle-and-camera.mp4"></video>
+
+        <video controls src="../res/project-info-res/swg/current.mp4"></video>
+
+        <p>
+            Next steps for this project are unclear at the moment. Most recently, I've spent some time placing the spring characters
+            in new environments to see what types of stage designs would be most worth pursuing:
+        </p>
+
+        <div class='project-info-gallery'>
+            <figure class='large'><video controls src="../res/project-info-res/swg/race.mp4"></video>
+                <figcaption>
+                    Adding a "racing" mode to the game, where the springs must navigate large courses, could help place more focus on the unique spring-like movement of
+                    the characters. However, precise mechanics for such a mode (and how to deal with the dynamic camera)
+                    have yet to be determined.
+                </figcaption>
+            </figure>
+            <figure class='large'><video controls src="../res/project-info-res/swg/slopes.mp4"></video>
+                <figcaption>
+                    Designing stages with slopes can create some interesting (but often frustrating) movement situations.
+                    Unrelatedly, I really dig this cloud effect.
+                </figcaption>
+            </figure>
+        </div>
 
     </section>
+
+    <p>
+        I'm looking forward to getting the time to build this project out further -- perhaps this winter...?
+    </p>
+
     <a href="../projects.html"><button>Back to Projects</button></a>
 </body>
 </html>

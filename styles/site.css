@@ -115,6 +115,28 @@ h1 {
           flex-grow: 1;
 }
 
+.project-info-summary {
+  border-bottom: 2px solid #2b2b2b;
+}
+
+.project-info-summary * {
+  margin: 3px;
+}
+
+.tools-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tools-list li {
+  display: inline-block;
+  background-color: #2b2b2b;
+  color: white;
+  padding: 2px 4px;
+  font-size: 0.75em;
+  margin: 2px;
+}
+
 .project-card {
   border-radius: 20px;
   padding: 30px 40px;
@@ -130,20 +152,6 @@ h1 {
   text-align: left;
   -webkit-filter: drop-shadow(0px 10px 4px #CCCCCC);
           filter: drop-shadow(0px 10px 4px #CCCCCC);
-}
-
-.project-card ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-card li {
-  display: inline-block;
-  background-color: #2b2b2b;
-  color: white;
-  padding: 2px 4px;
-  font-size: 0.75em;
-  margin: 2px;
 }
 
 .project-card h3 {
