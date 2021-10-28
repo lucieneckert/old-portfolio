@@ -6,6 +6,8 @@ $font-color: #2b2b2b // or not 2b2b2b, that is the question
 $shadow-color: #CCCCCC
 $dark-shadow-color: #222222
 
+$mobile-break: 700px
+
 html
     background-color: $page-bg
     color: $font-color
@@ -15,6 +17,10 @@ html
     padding: 30px 40px
     background-color: $bg-color
     margin: 10px
+
+header
+    @media (max-width: $mobile-break)
+        max-width: 80%
 
 body
     @include card
@@ -30,11 +36,26 @@ body
     filter: drop-shadow(0px 10px 4px $shadow-color)
     animation: fade-in 0.25s
 
+    @media (max-width: $mobile-break)
+        max-width: $mobile-break
+        width: 90%
+        margin: 0px
+        border-radius: 0px
+        filter: none
+        padding: 10% 5%
+        font-size: 1.5em
+
+
 img
     max-width: 1000px
+    @media (max-width: $mobile-break)
+        max-width: 80%
 
 video
     max-width: 1000px
+    @media (max-width: $mobile-break)
+            padding: 2px
+            max-width: 90%
 
 h1
     font-size: 2em
@@ -61,6 +82,11 @@ h1
 
 .col
     flex-direction: column
+    
+    @media (max-width: $mobile-break)
+        padding: 2px
+        width: 90%
+        max-width: 90%
 
 .logo
     width: 100px
@@ -85,9 +111,19 @@ h1
     a
         text-decoration: none
 
+        
+    @media (max-width: $mobile-break)
+        padding: 5px
+        max-width: 90%
+        flex-grow: 0
+
 .highlighted-project-desc
     max-width: 470px
     flex-grow: 1
+    @media (max-width: $mobile-break)
+        padding: 2px
+        max-width: 100%
+        width: 90%
 
 .project-info-summary
     border-bottom: 2px solid $font-color
@@ -125,6 +161,11 @@ h1
         font-weight: lighter
         font-size: 0.8em
 
+    @media (max-width: $mobile-break)
+        max-width: 80%
+        width: 70%
+        height: 400px
+
 .project-card:hover
     background-color: white
     animation: hover-up 0.25s 
@@ -152,6 +193,10 @@ h1
     border-radius: 20px
     margin-left: -10%
     margin-top: -10%
+
+    @media (max-width: $mobile-break)
+        width: 600px
+        margin: 0px
 
 button
     border-radius: 10px
@@ -209,25 +254,47 @@ blockquote
 .project-info-gallery
     display: flex
     flex-wrap: wrap
+    align-content: center
+    justify-content: center
     img
         max-width: 400px
     video
         width: 400px
         flex-grow: 1
+        @media (max-width: $mobile-break)
+            width: 90%
     .small
         max-width: 100px
+        
+        @media (max-width: $mobile-break)
+            padding: 2px
+            max-width: 30%
     .medium
         max-width: 200px
+
+        @media (max-width: $mobile-break)
+            padding: 2px
+            max-width: 30%
+
     .large
         max-width: none
         flex-grow: 1
+
+        @media (max-width: $mobile-break)
+            padding: 2px
+            max-width: 100%
+
     .rounded
         border-radius: 10px
+
     figcaption
         padding: 10px
         font-size: 0.8em
         width: 380px
         background-color: lightgrey
+        @media (max-width: $mobile-break)
+            padding: 2px
+            width: 100%
 
 @keyframes grow-bg-image
     0%
