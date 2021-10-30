@@ -284,6 +284,12 @@ h1 {
   }
 }
 
+.album-cover {
+  width: 100%;
+  height: auto;
+  border: 5px solid black;
+}
+
 button {
   border-radius: 10px;
   background-color: purple;
