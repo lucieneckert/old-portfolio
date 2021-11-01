@@ -226,7 +226,7 @@ h1 {
   .project-card {
     max-width: 80%;
     width: 70%;
-    height: 400px;
+    height: 350px;
   }
 }
 
@@ -371,7 +371,7 @@ blockquote {
 
 @media (max-width: 700px) {
   .project-info-gallery video {
-    width: 90%;
+    width: 150%;
   }
 }
 
