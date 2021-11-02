@@ -80,7 +80,7 @@ h1
     margin-left: -40px
     padding: 20px
     border-radius: 10px
-    background-color: $dark-grey
+    background-color: lightgray
 
     &:hover
         background-color: darkgrey
@@ -219,12 +219,21 @@ h1
     display: flex
     flex-direction: row
 
+    img
+        width: 40%
+        height: 40%
+        border: 5px solid black
+
     .music-player-tracks
         display: flex
         flex-direction: column
+        flex-grow: 1
 
         audio
             padding: 10px
+
+        label
+            padding-left: 10px
 
 button
     border-radius: 10px
