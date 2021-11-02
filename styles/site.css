@@ -94,6 +94,20 @@ h1 {
           justify-content: space-between;
 }
 
+.projects-list li {
+  list-style: none;
+  margin-left: -40px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ebebeb;
+}
+
+.projects-list li:hover {
+  background-color: darkgrey;
+  color: white;
+  cursor: pointer;
+}
+
 .project-flex {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -288,6 +302,30 @@ h1 {
   width: 100%;
   height: auto;
   border: 5px solid black;
+}
+
+.music-player {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.music-player .music-player-tracks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.music-player .music-player-tracks audio {
+  padding: 10px;
 }
 
 button {

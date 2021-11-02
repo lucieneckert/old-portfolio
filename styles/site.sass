@@ -75,6 +75,18 @@ h1
     flex-direction: row
     justify-content: space-between
 
+.projects-list li
+    list-style: none
+    margin-left: -40px
+    padding: 20px
+    border-radius: 10px
+    background-color: $page-bg
+
+    &:hover
+        background-color: darkgrey
+        color: white
+        cursor: pointer
+
 .project-flex
     @extend .index-flex
     justify-content: center
@@ -202,6 +214,17 @@ h1
     width: 100%
     height: auto
     border: 5px solid black
+
+.music-player
+    display: flex
+    flex-direction: row
+
+    .music-player-tracks
+        display: flex
+        flex-direction: column
+
+        audio
+            padding: 10px
 
 button
     border-radius: 10px
