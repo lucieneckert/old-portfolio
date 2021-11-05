@@ -224,6 +224,8 @@ h1 {
   text-align: left;
   -webkit-filter: drop-shadow(0px 10px 4px #CCCCCC);
           filter: drop-shadow(0px 10px 4px #CCCCCC);
+  overflow: hidden;
+  border: 1px solid lightgrey;
 }
 
 .project-card h3 {
@@ -285,10 +287,9 @@ h1 {
 }
 
 .project-card-banner {
-  width: 120%;
-  border-radius: 20px;
-  margin-left: -10%;
-  margin-top: -10%;
+  width: 140%;
+  margin-left: -20%;
+  margin-top: -15%;
 }
 
 @media (max-width: 700px) {
