@@ -28,7 +28,7 @@ body
     margin: 20px auto
 
     font-family: $font-stack
-    font-size: 1.25em
+    font-size: 1.0em
 
     width: 90%
     max-width: 1000px
@@ -43,19 +43,19 @@ body
         border-radius: 0px
         filter: none
         padding: 10% 5%
-        font-size: 1.5em
+        font-size: 1.25em
 
 
 img
     max-width: 1000px
-    @media (max-width: $mobile-break)
-        max-width: 80%
+    // @media (max-width: $mobile-break)
+    //     max-width: 80%
 
 video
     max-width: 1000px
     @media (max-width: $mobile-break)
             padding: 2px
-            max-width: 90%
+            max-width: 100%
 
 h1
     font-size: 2em
@@ -132,8 +132,8 @@ h1
 .highlighted-project-desc
     max-width: 470px
     flex-grow: 1
+    padding: 5
     @media (max-width: $mobile-break)
-        padding: 2px
         max-width: 100%
         width: 90%
 
@@ -206,10 +206,6 @@ h1
     width: 140%
     margin-left: -20%
     margin-top: -15%
-
-    @media (max-width: $mobile-break)
-        width: 600px
-        margin: 0px
 
 .album-cover
     width: 100%

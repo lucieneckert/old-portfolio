@@ -17,7 +17,7 @@ body {
   margin: 10px;
   margin: 20px auto;
   font-family: Atkinson Hyperlegible, Helvetica, sans-serif;
-  font-size: 1.25em;
+  font-size: 1.0em;
   width: 90%;
   max-width: 1000px;
   -webkit-filter: drop-shadow(0px 10px 4px #CCCCCC);
@@ -35,18 +35,12 @@ body {
     -webkit-filter: none;
             filter: none;
     padding: 10% 5%;
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }
 
 img {
   max-width: 1000px;
-}
-
-@media (max-width: 700px) {
-  img {
-    max-width: 80%;
-  }
 }
 
 video {
@@ -56,7 +50,7 @@ video {
 @media (max-width: 700px) {
   video {
     padding: 2px;
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
@@ -177,11 +171,11 @@ h1 {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  padding: 5;
 }
 
 @media (max-width: 700px) {
   .highlighted-project-desc {
-    padding: 2px;
     max-width: 100%;
     width: 90%;
   }
@@ -290,13 +284,6 @@ h1 {
   width: 140%;
   margin-left: -20%;
   margin-top: -15%;
-}
-
-@media (max-width: 700px) {
-  .project-card-banner {
-    width: 600px;
-    margin: 0px;
-  }
 }
 
 .album-cover {
