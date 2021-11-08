@@ -189,6 +189,10 @@ h1 {
   margin: 3px;
 }
 
+.expandable-header {
+  cursor: pointer;
+}
+
 .tools-list {
   list-style-type: none;
   padding: 0;
