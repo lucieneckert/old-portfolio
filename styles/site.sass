@@ -9,8 +9,11 @@ $dark-shadow-color: #222222
 $mobile-break: 700px
 
 html
-    background-color: $page-bg
+    // background-color: $page-bg
     color: $font-color
+    background: #00bdf2 fixed url('../res/svg/bg-test.svg')
+    animation: fade-in 0.25s
+
 
 @mixin card($bg-color: white)
     border-radius: 20px
@@ -34,15 +37,16 @@ body
     max-width: 1000px
 
     filter: drop-shadow(0px 10px 4px $shadow-color)
-    animation: fade-in 0.25s
+    animation: fade-in 0.5s
 
     @media (max-width: $mobile-break)
         max-width: $mobile-break
         width: 90%
+        filter: none
         margin: 0px
         border-radius: 0px
         filter: none
-        padding: 10% 5%
+        padding: 10px 10px
         font-size: 1.25em
 
 
@@ -89,7 +93,8 @@ h1
 
 .project-flex
     @extend .index-flex
-    justify-content: center
+    justify-content: flex-start
+    align-content: center
 
 
 .col
@@ -113,12 +118,11 @@ h1
     text-align: center
 
     h2
-        display: block
-        padding-top: 60px;
-        font-weight: bolder
+        text-align: left
 
     li
         text-align: left
+        margin-left: -25px
 
     a
         text-decoration: none
@@ -126,16 +130,23 @@ h1
         
     @media (max-width: $mobile-break)
         padding: 5px
-        max-width: 90%
+        width: 95%
         flex-grow: 0
+
+.link-list
+    list-style: none
+
+.link-icon
+    height: 1em
+    margin-right: 0.5em
 
 .highlighted-project-desc
     max-width: 470px
     flex-grow: 1
-    padding: 5
+    padding: 5px
     @media (max-width: $mobile-break)
         max-width: 100%
-        width: 90%
+        width: 100%
 
 .project-info-summary
     border-bottom: 2px solid $font-color
@@ -192,6 +203,10 @@ h1
     color: white
     a
         color: lightblue
+    @media (max-width: $mobile-break)
+        border-radius: 0px
+        margin: 0px
+        margin-left: -20px
 
 .picture-gallery
     display: flex
@@ -266,6 +281,12 @@ button:hover
     background-repeat: repeat
     background-size: 100%
 
+    
+    h2
+        display: block
+        padding-top: 60px
+        font-weight: bolder
+        text-align: center
 
     p
         font-style: italic
