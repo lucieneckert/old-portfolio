@@ -81,6 +81,7 @@ h1
 
 .projects-list li
     list-style: none
+    margin: 10px
     margin-left: -40px
     padding: 20px
     border-radius: 10px
@@ -90,6 +91,33 @@ h1
         background-color: darkgrey
         color: white
         cursor: pointer
+        .in-progress
+            background-color: white
+            color: $dark-shadow-color
+
+    .in-progress
+        display: inline-block
+        padding: 2.5px 10px
+        background-color: $dark-shadow-color
+        color: white
+        margin-left: 20px
+    
+    .tools-list 
+        display: absolute
+
+        li
+            float: right
+            display: inline-block
+            background-color: $font-color
+            color: white
+            padding: 2px 4px
+            font-size: 0.75em
+            margin: 2px
+            margin-top: -20px
+            border-radius: 0px
+
+    
+
 
 .project-flex
     @extend .index-flex
@@ -191,6 +219,17 @@ h1
         max-width: 80%
         width: 70%
         height: 350px
+
+
+    .in-progress
+        position: absolute
+        display: inline-block
+        padding: 10px
+        margin-left: -40px
+        margin-top: -30px
+        width: 30%
+        background-color: black
+        color: white
 
 .project-card:hover
     background-color: white
