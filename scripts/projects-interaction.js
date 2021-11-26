@@ -1,6 +1,6 @@
-// $('#misc-header').click(() => {
-//     console.log("test")
-// })
+$('#misc-header').click(() => {
+    console.log("test")
+})
 
 
 // sup, this is TBD
