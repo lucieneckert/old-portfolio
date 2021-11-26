@@ -242,10 +242,28 @@ h1
     color: white
     a
         color: lightblue
+    h2
+        margin: 0px auto
+        font-size: 1em
+
+    .banner-title
+        max-width: 100%
+        border-radius: 20px
+
     @media (max-width: $mobile-break)
         border-radius: 0px
         margin: 0px
         margin-left: -20px
+
+.expandable-header
+    cursor: pointer
+    border-bottom: 1px solid $font-color
+    img
+        margin: auto
+        margin-top: 6px
+        height: 1em
+        animation-fill-mode: forwards
+        animation-direction: normal
 
 .picture-gallery
     display: flex
@@ -403,6 +421,18 @@ blockquote
         opacity: 0        
     100%
         opacity: 1
+
+@keyframes rotate-90
+    0%
+        transform: rotate(0deg)        
+    100%
+        transform: rotate(90deg)
+
+@keyframes rotate-back90
+    0%
+        transform: rotate(90deg)        
+    100%
+        transform: rotate(0deg)
 
 @keyframes hover-up
     0%
