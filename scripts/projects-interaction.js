@@ -4,13 +4,9 @@ for (let i = 0; i < expandableHeaders.length; i++) {
     let header = expandableHeaders[i]
     let icon = header.getElementsByTagName("img")[0]
     let section = header.parentElement.getElementsByClassName("expandable-section")[0]
-    console.log(section)
     section.style.display = "none"
     expanded.push(false)
-    console.log(header)
     header.onclick = () => {
-        console.log("clicked " + i)
-        console.log(expanded)
         if (expanded[i]) {
             section.style.display = "none"
             section.style.animation = "none"
@@ -28,5 +24,8 @@ for (let i = 0; i < expandableHeaders.length; i++) {
     }
 }
 
-
-// sup, this is TBD
+// Make the section targeted by URL expand
+let url = window.location
+let target = url.toString().split("#")[1]
+let headerTarget = target + "-header"
+document.getElementById(headerTarget).click()
