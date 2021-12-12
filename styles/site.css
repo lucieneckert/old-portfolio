@@ -336,6 +336,8 @@ h1 {
 .expandable-header {
   cursor: pointer;
   border-bottom: 1px solid #2b2b2b;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .expandable-header img {
@@ -346,6 +348,10 @@ h1 {
           animation-fill-mode: forwards;
   -webkit-animation-direction: normal;
           animation-direction: normal;
+}
+
+.expandable-header:hover {
+  padding-left: 10px;
 }
 
 .picture-gallery {
@@ -453,13 +459,18 @@ button:hover {
   background-position: center;
   background-repeat: repeat;
   background-size: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .button-card h2 {
   display: block;
-  padding-top: 60px;
+  height: 20%;
+  padding-top: 30%;
   font-weight: bolder;
   text-align: center;
+  font-style: italic;
+  font-size: 3em;
 }
 
 .button-card p {
