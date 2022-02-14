@@ -467,6 +467,7 @@ button {
   background-color: #ca4dc1;
   padding: 10px 30px;
   margin: 10px 0px;
+  border: 2px solid #ca4dc1;
   display: block;
   font-size: 1em;
   border: none;
@@ -476,8 +477,7 @@ button {
 button:hover {
   background-color: white;
   cursor: pointer;
-  border: 2px solid;
-  border-color: purple;
+  border: 2px solid purple;
   color: purple;
 }
 
